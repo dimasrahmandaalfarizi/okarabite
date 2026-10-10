@@ -105,6 +105,7 @@ function WebGLBiscuitCanvas({
     renderer.domElement.style.height = '100%'
     renderer.domElement.style.cursor = 'grab'
     renderer.domElement.className = 'select-none'
+    renderer.domElement.style.touchAction = 'pan-y'
 
     container.appendChild(renderer.domElement)
 
@@ -384,7 +385,7 @@ function FramerMotionFallback({ flavorId }: { flavorId: FlavorId }) {
       onPointerUp={handlePointerUp}
       onPointerCancel={handlePointerUp}
       className="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
-      style={{ perspective: 1200 }}
+      style={{ perspective: 1200, touchAction: 'pan-y' }}
     >
       <motion.div
         style={{
@@ -392,7 +393,7 @@ function FramerMotionFallback({ flavorId }: { flavorId: FlavorId }) {
           rotateY: springY,
           transformStyle: 'preserve-3d',
         }}
-        className="relative w-64 h-64 sm:w-76 sm:h-76 md:w-88 md:h-88 flex items-center justify-center transition-shadow duration-500"
+        className="relative w-52 h-52 sm:w-72 sm:h-72 md:w-88 md:h-88 flex items-center justify-center transition-shadow duration-500"
       >
         <div
           className="absolute -bottom-10 w-56 sm:w-68 h-12 rounded-full pointer-events-none transition-all duration-700 blur-xl"
@@ -530,14 +531,7 @@ export default function Interactive3DBiscuit({ flavorId }: Props) {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {showWebGL ? (
-        <>
-          <WebGLBiscuitCanvas flavorId={flavorId} onError={() => setWebglFailed(true)} />
-          {/* Subtle real 3D badge */}
-          <div className="absolute -bottom-1 bg-black/60 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/20 text-[10px] font-mono font-bold text-white/90 shadow-md flex items-center gap-2 pointer-events-none select-none">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span>REAL 3D MODEL • DRAG TO ROTATE 360°</span>
-          </div>
-        </>
+        <WebGLBiscuitCanvas flavorId={flavorId} onError={() => setWebglFailed(true)} />
       ) : (
         <FramerMotionFallback flavorId={flavorId} />
       )}

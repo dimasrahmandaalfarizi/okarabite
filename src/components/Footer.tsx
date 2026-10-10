@@ -27,14 +27,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 sm:mb-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-full bg-[#E29526] text-black font-mono font-black text-xs flex items-center justify-center select-none">
-                OB
-              </div>
+            <div className="flex items-center gap-2.5 mb-3.5 sm:mb-4">
               <span
                 className="text-xl font-bold text-[#F5EDE4]"
                 style={{ fontFamily: 'Fraunces, Georgia, serif' }}
@@ -42,7 +39,7 @@ export default function Footer() {
                 Okara<span className="text-[#E29526]">Bite</span>
               </span>
             </div>
-            <p className="text-[#8C7A70] text-sm leading-relaxed font-medium mb-4 max-w-xs">
+            <p className="text-[#8C7A70] text-xs sm:text-sm leading-relaxed font-medium mb-4 max-w-sm">
               Camilan biskuit sehat berbahan dasar 100% tepung ampas tahu pilihan.
               Tinggi serat, kaya protein nabati, bebas pengawet sintetis. Dibuat
               dengan dedikasi oleh mahasiswa wirausaha.
@@ -81,22 +78,22 @@ export default function Footer() {
           {/* Quick links */}
           <div>
             <h4
-              className="font-black text-[#F5EDE4] mb-4 text-xs font-mono uppercase tracking-widest"
+              className="font-black text-[#F5EDE4] mb-3 sm:mb-4 text-xs font-mono uppercase tracking-widest"
             >
-              NAVIGASI
+              NAVIGATION
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2 sm:space-y-2.5">
               {[
-                { label: 'Tentang Biskuit', href: '#delight' },
-                { label: 'Cerita Rasa', href: '#story' },
-                { label: 'Varian Rasa', href: '#flavors' },
-                { label: 'Ulasan Pelanggan', href: '#proof' },
-                { label: 'Pesan Sekarang', href: '#order' },
+                { label: 'The Crunch', href: '#delight' },
+                { label: 'Our Story', href: '#story' },
+                { label: 'Nutrition & Flavors', href: '#flavors' },
+                { label: 'Customer Reviews', href: '#reviews' },
+                { label: 'Order Now', href: '#order' },
               ].map((link) => (
                 <li key={link.href}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="text-[#8C7A70] hover:text-[#E29526] text-sm font-medium transition-colors cursor-pointer"
+                    className="text-[#8C7A70] hover:text-[#E29526] text-xs sm:text-sm font-medium transition-colors cursor-pointer"
                   >
                     {link.label}
                   </button>
@@ -108,11 +105,11 @@ export default function Footer() {
           {/* Product info */}
           <div>
             <h4
-              className="font-black text-[#F5EDE4] mb-4 text-xs font-mono uppercase tracking-widest"
+              className="font-black text-[#F5EDE4] mb-3 sm:mb-4 text-xs font-mono uppercase tracking-widest"
             >
               VARIAN ARTISAN
             </h4>
-            <ul className="space-y-2.5 text-[#8C7A70] text-sm font-medium font-mono">
+            <ul className="space-y-2 sm:space-y-2.5 text-[#8C7A70] text-xs sm:text-sm font-medium font-mono">
               <li>01 / Original Butter Crisp</li>
               <li>02 / Dark Choco Chips</li>
               <li>03 / Kyoto Matcha Blend</li>
@@ -121,11 +118,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-[#382010] pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[#6E5D53] text-xs font-mono font-medium">
+        <div className="border-t border-[#382010] pt-6 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-2.5 text-center sm:text-left">
+          <p className="text-[#6E5D53] text-[11px] sm:text-xs font-mono font-medium">
             © {currentYear} OkaraBite. Program Mahasiswa Wirausaha (PMW) 2026.
           </p>
-          <p className="text-[#6E5D53] text-xs font-mono font-medium">
+          <p className="text-[#6E5D53] text-[11px] sm:text-xs font-mono font-medium">
             Tim OkaraBite: Bagas, Nadia, Dimas, Dewa
           </p>
         </div>
